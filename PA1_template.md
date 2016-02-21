@@ -18,7 +18,7 @@ dailySteps <- aggregate(steps~date, data = d, FUN = sum)
 hist(dailySteps$steps, main = "Histogram of daily steps", xlab = "Total number of steps per day")
 ```
 
-![](PA1_MC_files/figure-html/unnamed-chunk-2-1.png)
+![](PA1_template_files/figure-html/unnamed-chunk-2-1.png)
 
 ```r
 # 3) Calculate and report the mean and median of the total number of steps taken per day
@@ -47,7 +47,7 @@ intervalSteps <- aggregate(steps~interval, data = d, FUN = mean)
 qplot(interval, steps, data = intervalSteps, geom = "line", main = "Average number of steps taken for each 5-minute interval, across all days")
 ```
 
-![](PA1_MC_files/figure-html/unnamed-chunk-3-1.png)
+![](PA1_template_files/figure-html/unnamed-chunk-3-1.png)
 
 ```r
 # 2) Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
@@ -94,7 +94,7 @@ dailyStepsNew <- aggregate(steps~date, data = dnew, FUN = sum)
 hist(dailyStepsNew$steps, main = "Histogram of daily steps with NAs filled", xlab = "Total number of steps per day")
 ```
 
-![](PA1_MC_files/figure-html/unnamed-chunk-4-1.png)
+![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)
 
 ```r
 meanDailyStepsNew <- mean(dailyStepsNew$steps)
@@ -141,7 +141,7 @@ intervalStepsDw <- aggregate(steps~interval + daytype, data = dw, FUN = mean)
 qplot(interval, steps, data = intervalStepsDw, geom = "line", facets = daytype~.)
 ```
 
-![](PA1_MC_files/figure-html/unnamed-chunk-5-1.png)
+![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)
 
 ```r
 wdi <- filter(intervalStepsDw, daytype == "weekday")
